@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+body, html{
+  /* background-color: #e5e5e5; */
+  background-color: #0b101b;
+  font-family: 'poppins', sans-serif;
+}
+
+th,td{
+  padding: 10px 10px;
+  border: 2px solid white;
+}
+
+td{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@theme{
+  --color-primary: #6358dc
+}
