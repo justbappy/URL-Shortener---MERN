@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import Navbar from "../UI/Navbar"
 import Search from "../UI/Search"
 
@@ -13,7 +13,7 @@ const Header = () => {
             <h1
             className="text-primary text-3xl md:text-4xl font-semibold"
             >
-                <span className="text-shadow-[0px_0px_2px_rgb(99_88_220)]">URL Shortener</span>
+                <Link to={"/"} className="text-shadow-[0px_0px_2px_rgb(99_88_220)]">URL Shortener</Link>
             </h1>
             <Navbar/>
         </div>
@@ -24,19 +24,37 @@ const Header = () => {
             {/* mobile nav */}
             <nav>
                 <ul
-                className="md:hidden text-white flex gap-4 justify-center"
+                className="md:hidden text-white flex gap-4 justify-around"
                 >
                     <li>
-                        <Link to={"/"}>Home</Link>
+                        <NavLink to={"/"}
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >Home</NavLink>
                     </li>
                     <li>
-                        <Link to={"/user/all-links"}>All Links</Link>
+                        <NavLink to={"/user/all-links"}
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >All Links</NavLink>
                     </li>
+                    {/* <li>
+                        <Link to={"/support"}>Support us</Link>
+                    </li> */}
                     <li>
-                        <Link to={"/contact-us"}>Contact us</Link>
-                    </li>
-                    <li>
-                        <Link to={"/support-us"}>Support us</Link>
+                        <NavLink to={"/contact-us"}
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >Contact us</NavLink>
                     </li>
                 </ul>
             </nav>

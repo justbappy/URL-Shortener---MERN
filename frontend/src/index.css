@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+@theme{
+  --color-primary: #6358dc
+}
+
 body, html{
   /* background-color: #e5e5e5; */
   background-color: #0b101b;
@@ -17,6 +21,6 @@ td{
   white-space: nowrap;
 }
 
-@theme{
-  --color-primary: #6358dc
+#testing{
+  text-decoration: ;
 }

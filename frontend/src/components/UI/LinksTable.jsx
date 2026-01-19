@@ -4,40 +4,13 @@ import { FaPen } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 
-const LinksTable = () => {
-
-
-    const links = [
-        {
-            original_link: "https://tailwindcss.com/docs/table-layout",
-            shorten_link: "url_shortener/short1",
-            createAt: "12 Aug 2026",
-        },
-        {
-            original_link: "https://www.google.com/search?q=how+to+set+only+1+line+text+in+td+in+tailwind+css&oq=how+to+set+only+1+line+text+in+td+in+tailwind+css&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCDk3MDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
-            shorten_link: "url_shortener/short2",
-            createAt: "12 Aug 2026",
-        },
-        {
-            original_link: "https://react-icons.github.io/react-icons/search/#q=alphabet",
-            shorten_link: "url_shortener/short3",
-            createAt: "12 Aug 2026",
-        },
-        {
-            original_link: "https://htmlcolorcodes.com/hex-to-rgb/",
-            shorten_link: "url_shortener/short4",
-            createAt: "12 Aug 2026",
-        },
-        {
-            original_link: "https://tailwindcss.com/docs/border-spacing",
-            shorten_link: "url_shortener/short5",
-            createAt: "12 Aug 2026",
-        },
-    ]
+const LinksTable = ({
+    links
+}) => {
 
   return (
     <div
-    className='w-[90%] mx-auto mt-2'
+    className='w-full mx-auto mt-2'
     >
         <div
         className='hidden md:flex'
@@ -66,7 +39,8 @@ const LinksTable = () => {
                                 <td>{link.original_link}</td>
                                 <td>{link.shorten_link}</td>
                                 <td>{link.createAt}</td>
-                                <td className='flex justify-end items-center gap-2'>
+                                <td>
+                                <div className='flex justify-end items-center gap-2'>
                                     <button>
                                     <Link
                                     className='bg-yellow-800 text-yellow-300 px-3 py-1 rounded-full'
@@ -80,6 +54,7 @@ const LinksTable = () => {
                                             <MdDelete className='h-6 w-6 text-red-600'/>
                                         </Link>
                                     </button>
+                                </div>
                                 </td>
                             </tr>
                         ))
@@ -104,11 +79,22 @@ const LinksTable = () => {
                             <MdDelete className='text-red-600 h-6 w-6'/>
                         </Link>
                     </div>
-                    <Link to={link.original_link} 
-                    className='wrap-break-word text-blue-400 underline'
-                    > 
-                        {link.original_link}
-                    </Link>
+                    <div className='w-full mb-2'>
+                        <span className='text-white text-nowrap mr-1'>Shorten Link:</span>
+                        <Link to={link.original_link} 
+                        className='wrap-break-word break-after-all text-blue-400 underline'
+                        > 
+                            {link.shorten_link}
+                        </Link>
+                    </div>
+                    <div className='w-full '>
+                        <span className='text-white text-nowrap mr-1'>Original Link:</span>
+                        <Link to={link.original_link} 
+                        className='wrap-break-word break-after-all text-blue-400 underline'
+                        > 
+                            {link.original_link}
+                        </Link>
+                    </div>
                 </div>
             ))
            }

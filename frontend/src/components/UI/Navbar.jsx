@@ -1,6 +1,6 @@
 import {RxExit} from 'react-icons/rx'
 import {TbLogin2} from 'react-icons/tb'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaBell } from "react-icons/fa";
 import Search from './Search';
@@ -18,19 +18,37 @@ const Navbar = () => {
             user ? (
             <div className=' flex gap-5 items-center justify-end flex-grow'>
                 <div
-                className='hidden md:flex gap-5'
+                className='hidden md:flex gap-3'
                 >
                     <li>
-                        <Link to={"/"}>Home</Link>
+                        <NavLink to={"/"} className='px-2'
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >Home</NavLink>
                     </li>
-                    <li>
-                        <Link to={"/user/all-links"}>All Links</Link>
+                    <li className='px-2'>
+                        <NavLink to={"/user/all-links"}
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >All Links</NavLink>
                     </li>
-                    <li>
-                        <Link to={"/support-us"}>Support Us</Link>
-                    </li>
-                    <li>
-                        <Link to={"/contact-us"}>Contact Us</Link>
+                    {/* <li>
+                        <Link to={"/support"}>Support Us</Link>
+                    </li> */}
+                    <li className='px-2'>
+                        <NavLink to={"/contact-us"}
+                        style={
+                            ({isActive}) => ({
+                                color: isActive? "#6358dc" : "white"
+                            })
+                        }
+                        >Contact Us</NavLink>
                     </li>
                 </div>
                 <li

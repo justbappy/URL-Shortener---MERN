@@ -6,6 +6,33 @@ import LinksTable from '../components/UI/LinksTable'
 
 const Home = () => {
 
+  const links = [
+        {
+            original_link: "https://tailwindcss.com/docs/table-layout",
+            shorten_link: "url_shortener/short1",
+            createAt: "12 Aug 2026",
+        },
+        {
+            original_link: "https://www.google.com/search?q=how+to+set+only+1+line+text+in+td+in+tailwind+css&oq=how+to+set+only+1+line+text+in+td+in+tailwind+css&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCDk3MDBqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8",
+            shorten_link: "url_shortener/short2",
+            createAt: "12 Aug 2026",
+        },
+        {
+            original_link: "https://react-icons.github.io/react-icons/search/#q=alphabet",
+            shorten_link: "url_shortener/short3",
+            createAt: "12 Aug 2026",
+        },
+        {
+            original_link: "https://htmlcolorcodes.com/hex-to-rgb/",
+            shorten_link: "url_shortener/short4",
+            createAt: "12 Aug 2026",
+        },
+        {
+            original_link: "https://tailwindcss.com/docs/border-spacing",
+            shorten_link: "url_shortener/short5",
+            createAt: "12 Aug 2026",
+        },
+    ];
 
   const user = false;
 
@@ -14,8 +41,6 @@ const Home = () => {
     <div
     className='w-[95%] mx-auto pb-10'
     >
-      <Header/>
-
       <div
       className='text-white flex flex-col items-center mt-10 gap-5'
       >
@@ -44,7 +69,7 @@ const Home = () => {
       </div>
 
       <div>
-        <LinksTable/>
+        <LinksTable links={links}/>
       </div>
     </div>
   </div>
