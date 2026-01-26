@@ -7,7 +7,7 @@ import Search from './Search';
 
 const Navbar = () => {
 
-    const user = false;
+    const user = true;
 
   return (
     <nav className='flex-grow'>
@@ -74,6 +74,7 @@ const Navbar = () => {
                     >22</span>
                     <FaBell className='w-4 h-4'/>
                 </li> */}
+                <Link to={"/user/profile"}>
                 <li
                 className='border-1 bg-gray-50/10 py-2 px-4 rounded-full'
                 >
@@ -81,6 +82,7 @@ const Navbar = () => {
                     className='text-xl'
                     >V</span>
                 </li>
+                </Link>
             </div>
             ) : (
             <div

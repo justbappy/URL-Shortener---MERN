@@ -8,6 +8,7 @@ import AppLayout from './components/layouts/AppLayout'
 import SupportUs from './pages/SupportUs'
 import Contact from './pages/Contact'
 import ProtectedRoute from './components/common/ProtectedRoute'
+import UserProfile from './pages/UserProfile'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       }>
           <Route index element={<Home/>}/>
           <Route path="/user/all-links" element={<AllLinks/>} />
+          <Route path="/user/profile" element={<UserProfile/>}/>
           {/* <Route path="/support" element={<SupportUs/>} /> */}
           <Route path="/contact-us" element={<Contact/>} />
       </Route>

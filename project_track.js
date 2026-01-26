@@ -50,16 +50,30 @@
     |--models
         |--auth.model.js
     |--controllers
+        |--auth.controller.js
+            |--jwt authentication using cookie and req.headers for private authorization
     |--routes
         |--user route - postman
             |-auth.route.js
-                |--register
+                |--register - post
                     // |--create user and store auth details
                     // |--password hashing
-                |--login
+                    // |--generate auth token
+                    // |--store auth token in cookie
+                |--login - post
                     // |--retrieve email and password from form
                     // |--check user already exists
                     // |--check password is correct
+                    // |--generate auth token
+                    // |--store auth token in cookie
+                |--profile - get
+                    |--retrieve user details for profile
+                    |--private authentication controller - jwt token authentication using cookie and headers
+            |--links.route.js
+                |--short-link - post
+                    |--retrieve original link and shorten keyword (optional) from form
+                    |--shorten link logic
+                    |--store in database
     |--app.js
 
 */
